@@ -49,4 +49,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const data = await response.json();
         return data[0][0][0];
       }
+      function showError(message) {
+        errorContainer.textContent = message;
+      }
+    
+      function clearError() {
+        errorContainer.textContent = '';
+      }
+    });
   
