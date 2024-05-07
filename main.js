@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     async function displayWeather(weatherData) {
       clearError(); 
       const { name, weather, main } = weatherData;
+      const weatherDescription = await translateDescription(weather[0].description); 
       const temperature = main.temp;
       const feelsLike = main.feels_like;
   
@@ -43,3 +44,9 @@ document.addEventListener('DOMContentLoaded', function () {
         <p>Sensación térmica: ${feelsLike}°C</p>
       `;
     }
+    async function translateDescription(description) {
+        const response = await fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=es&dt=t&q=${encodeURI(description)}`);
+        const data = await response.json();
+        return data[0][0][0];
+      }
+  
