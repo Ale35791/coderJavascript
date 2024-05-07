@@ -1,0 +1,12 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #00378a; /* Color de fondo */
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #ffffff; /* Color del título */
+  }
